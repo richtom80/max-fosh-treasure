@@ -1,0 +1,6 @@
+{
+    "require": {
+        "twbs/bootstrap": "^5.0",
+        "what3words/w3w-php-wrapper": "3.*"
+    }
+}

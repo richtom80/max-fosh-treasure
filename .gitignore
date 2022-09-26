@@ -1,0 +1,10 @@
+/vendor
+/vendor/*
+includes/
+includes/*
+cgi-bin/
+cgi-bin/*
+.well-known/
+.well-known/*
+.htaccess
+.ftpconfig
