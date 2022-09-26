@@ -1,0 +1,31 @@
+.char-box, .char-box-lg, .char-box-blank{
+  width: 25px;
+  height: 25px;
+  background-color: #fff ;
+  margin: 1px;
+  padding: 0 2px;
+  border-radius: 3px;
+  border: 1px solid #333;
+  font-family: courier;
+  text-align: center;
+  font-size: 1em;
+  cursor: pointer !important;
+  user-select: none;
+}
+.char-numb{
+  position: sticky;
+  display: block;
+  top: 1px;
+  right: 1px;
+  font-size: 0.7em;
+}
+.char-box-lg{
+  width: 40px;
+  height: 40px;
+}
+.char-box-blank{
+  background-color: #ddd;
+}
+.char-box-click {
+  background:yellow !important;
+}
