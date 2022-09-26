@@ -15,6 +15,22 @@ Post on TikTok videos?
 No need to spam or guess or stir things up
 Just copy what this silly song shows";
 
+if($_GET['spoken'] == 1){
+  $clue = "\"IN THE NAME OF MAX FOSH, DISH OUT THE FISH\"
+THAT'S ALL YOU NEED TO SPOUT
+EXACTLY WHO TO ASK AND HOW?
+JUST USE MY VID TO FIND OUT
+TO CLAIM THE PRECIOUS TROUT
+NEIGHBOUR ON THE BUS OR A DEAR OLD QUEEN
+WITH THE POSSIBILITY THE WORLD IS PACKED
+BUT THE KEEPER OF THE SECRET IS NOT CLOSE TO MAX
+AND THAT'S BEYOND A FACT
+DANCE IN A CRAZY WAY, USE A SQUEAKY VOICE
+POST ON TIKTOK VIDEOS?
+NO NEED TO SPAM OR GUESS OR STIR UP THINGS UP
+JUST COPY WHAT THIS SONG SILLY SHOWS";
+}
+
 $clue = strtoupper($clue);
 
 $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
@@ -41,7 +57,7 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 
       <div class="col-md-12">
         <h1 class="mt-5">Word Search - GoldFOSH</h1>
-        <p class="lead">Use this tool as a word search in the clue with all spaces removed.</p>
+        <p class="lead">Use this tool as a word search in the clue with all spaces removed. <?php if($_GET['spoken'] == 1){ echo "<a href='{$_SERVER['PHP_SELF']}' class='btn btn-primary btn-sm'>Original Spoken Clue</a>"; } else { echo "<a href='{$_SERVER['PHP_SELF']}?spoken=1' class='btn btn-primary btn-sm'>Original Subtile Clue</a>"; } ?></p>
       </div>
 
       <div class="col-lg-6 col-md-12">
@@ -67,7 +83,6 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
           <p>Use the arrow spaces to move the lines, if it helps.  Click once to add letter to scratchpad, double click to highlight. This is probably better on desktop rather than mobile. Also there is no state management, so refreshing the page will loose anything you've done.</p>
           <p>
             <a href="wordsearch-spaces.php" class="btn btn-primary btn-sm">Grid with all chars</a>
-            <a href="wordsearch-subtitle.php" class="btn btn-primary btn-sm">Grid with subtitle typos</a>
             <a href="wordsearch-large.php" class="btn btn-primary btn-sm">Grid with large with numbers</a>
             <a href="wordsearch-extra.php" class="btn btn-primary btn-sm">Grid with extra spaces</a>
           </p>
