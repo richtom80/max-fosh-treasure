@@ -15,10 +15,13 @@ include("includes/vars.php");
     <title>W3W Search</title>
   </head>
   <body>
+
+  <?php include("header.php"); ?>
+
   <div class="container">
     <div class="row">
       <main class="col-md-12">
-        <h1 class="mt-5">What3Words - Max Fosh</h1>
+        <h1 class="mt-5">What3Words</h1>
         <p class="lead">This site has been put together to search what3words.com for possible clues in the Max Fosh Treasure Hunt. It takes your search terms and jumbles them in all the possible orders, it is designed to be used with all three words
         <p>There is also a <a href="wordsearch.php">word search tool</a>.</p>
       </main>

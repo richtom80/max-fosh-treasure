@@ -35,13 +35,13 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 </head>
 
 <body>
+  <?php include("header.php"); ?>
   <div class="container">
     <div class="row">
 
       <div class="col-md-12">
-        <h1 style="margin: 1em 0;">Word Search - GoldFOSH</h1>
-        <p>Quick tool to search through the clue from the vid. Also the <a href="/">W3W combo solver from last hunt</a>.
-        </p>
+        <h1 class="mt-5">Word Search - GoldFOSH</h1>
+        <p class="lead">Use this tool as a word search in the clue with all spaces and characters.</p>
       </div>
 
       <div class="col-lg-6 col-md-12">
@@ -94,7 +94,7 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 
     </div>
   </div>
-
+  <?php include("footer.php"); ?>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -123,15 +123,6 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
     });
   </script>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1139617-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1139617-1');
-</script>
 </body>
 
 </html>

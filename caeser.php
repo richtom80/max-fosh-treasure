@@ -53,12 +53,13 @@ function Cipher($ch, $key){
 </head>
 
 <body>
+	<?php include("header.php"); ?>
   <div class="container">
     <div class="row">
 
-      <div class="col-md-12">
-        <h1 style="margin: 1em 0;">Caeser Cypher - Shift Characters</h1>
-        <p>Quick tool to apply caeser cypher to text.</p>
+			<div class="col-md-12">
+        <h1 class="mt-5">Caeser Cypher</h1>
+        <p class="lead">Quick tool to add all 26 caeser character shift cypher to clues.</p>
       </div>
 
       <div class="col-md-12">
@@ -85,6 +86,7 @@ function Cipher($ch, $key){
 
     </div>
   </div>
+	<?php include("footer.php"); ?>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -97,15 +99,7 @@ function Cipher($ch, $key){
 
     });
   </script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1139617-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-1139617-1');
-</script>
 </body>
 
 </html>
