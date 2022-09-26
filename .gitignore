@@ -1,7 +1,6 @@
 /vendor
 /vendor/*
-includes/
-includes/*
+includes/vars.php
 cgi-bin/
 cgi-bin/*
 .well-known/
