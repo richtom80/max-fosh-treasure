@@ -1,6 +1,8 @@
 # Max Fosh Treasure Hunts
 
-This is a few tools that have been thrown together for hunters interested in both of Max Fosh's treasure hunters
+This is a few tools that have been thrown together for hunters interested in both of Max Fosh's treasure hunters, the W3W search was from the original hunt and word search created for the GOLDFosh hunt.
+
+P.S. this has been thrown together and does not use good principles for writing PHP applications
 
 ## Installation
 
