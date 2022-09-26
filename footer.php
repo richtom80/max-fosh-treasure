@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        Built by <a href="http://richtom80.co.uk">Richard Thompson</a>
+        Built by <a href="https://richtom80.co.uk">Richard Thompson</a>
         <a class="text-muted" href="https://www.instagram.com/richtom80/"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a>
       </div>
       <div class="col-md-6">Download on <a href="https://github.com/richtom80/max-fosh-treasure">GitHub</a></div>

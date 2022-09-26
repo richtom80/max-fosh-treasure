@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "twbs/bootstrap",
-            "version": "v5.0.1",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "58b1be927f43c779377e478df2d119f2ddf956ca"
+                "reference": "23e50829f958ea1d741d63e2781716be037e4644"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/58b1be927f43c779377e478df2d119f2ddf956ca",
-                "reference": "58b1be927f43c779377e478df2d119f2ddf956ca",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/23e50829f958ea1d741d63e2781716be037e4644",
+                "reference": "23e50829f958ea1d741d63e2781716be037e4644",
                 "shasum": ""
             },
             "replace": {
@@ -52,15 +52,9 @@
             ],
             "support": {
                 "issues": "https://github.com/twbs/bootstrap/issues",
-                "source": "https://github.com/twbs/bootstrap/tree/v5.0.1"
+                "source": "https://github.com/twbs/bootstrap/tree/v5.2.1"
             },
-            "funding": [
-                {
-                    "url": "https://opencollective.com/bootstrap",
-                    "type": "open_collective"
-                }
-            ],
-            "time": "2021-05-13T16:22:20+00:00"
+            "time": "2022-09-07T15:31:39+00:00"
         },
         {
             "name": "what3words/w3w-php-wrapper",

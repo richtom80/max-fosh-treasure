@@ -18,4 +18,4 @@ define("GOOGLE_ANALYTICS", "Your google analytics here");
 ?>
 ```
 
-Run composer to update all dependencies
+Run 'composer update' to update all dependencies
