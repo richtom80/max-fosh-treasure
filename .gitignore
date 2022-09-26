@@ -7,3 +7,4 @@ cgi-bin/*
 .well-known/*
 .htaccess
 .ftpconfig
+composer.lock
