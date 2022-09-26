@@ -1,6 +1,8 @@
 
 <?php
 
+include("includes/vars.php");
+
 $clue = "\"In the name of Max Fosh, dish out the fish\"
 That's all you need to spout
 Exactly who to ask and how?
