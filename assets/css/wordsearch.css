@@ -29,3 +29,14 @@
 .char-box-click {
   background:yellow !important;
 }
+.wcc, .wcc:link, .wcc:active, .wcc:visited{
+  font-family: var(--bs-font-monospace);
+  direction: ltr;
+  unicode-bidi: bidi-override;
+  text-decoration: none;
+  color: #333;
+  font-size: .875em;
+}
+.wcc:hover{
+  text-decoration: underline;
+}

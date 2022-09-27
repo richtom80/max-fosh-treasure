@@ -17,22 +17,6 @@ Post on TikTok videos?
 No need to spam or guess or stir things up
 Just copy what this silly song shows";
 
-if($_GET['spoken'] == 1){
-  $clue = "\"IN THE NAME OF MAX FOSH, DISH OUT THE FISH\"
-THAT'S ALL YOU NEED TO SPOUT
-EXACTLY WHO TO ASK AND HOW?
-JUST USE MY VID TO FIND OUT
-TO CLAIM THE PRECIOUS TROUT
-NEIGHBOUR ON THE BUS OR A DEAR OLD QUEEN
-WITH THE POSSIBILITY THE WORLD IS PACKED
-BUT THE KEEPER OF THE SECRET IS NOT CLOSE TO MAX
-AND THAT'S BEYOND A FACT
-DANCE IN A CRAZY WAY, USE A SQUEAKY VOICE
-POST ON TIKTOK VIDEOS?
-NO NEED TO SPAM OR GUESS OR STIR UP THINGS UP
-JUST COPY WHAT THIS SONG SILLY SHOWS";
-}
-
 $clue = strtoupper($clue);
 
 $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
@@ -61,26 +45,23 @@ $words_array = json_decode($words_json, true);
     <div class="row">
 
       <div class="col-md-12">
-        <h1 class="mt-5">Word Info - GoldFOSH</h1>
-        <p class="lead">Breakdown and definition of each word including length of word, lines it occurs in, number of occurrences in the clue and expanded definitions.</p>
+        <h1 class="mt-5">Word Analysis - GoldFOSH</h1>
+        <p class="lead">Breakdown and definition of each word including length of word, lines it occurs in, number of occurrences in the clue and expanded definitions. Click the word in the clue to jump to the word analysis.</p>
       </div>
 
-      <div class="col-lg-6 col-md-12">
+      <div class="col-md-12">
         <h2>Clue</h2>
-        <pre class="alert alert-success"><?= $clue; ?></pre>
-      </div>
-
-      <div class="col-lg-6 col-md-12">
-        <h2>Breakdown</h2>
-        <pre class="alert alert-warning"><?php
-          $lenmax = 0;
-          $words = 0;
-          foreach($ca as $k => $l){
-            echo "Line ".str_pad($k+1, 2, "0", STR_PAD_LEFT)." - Words: ".str_pad(str_word_count($l),2, "0", STR_PAD_LEFT)." | Length: ".strlen($l)." | Chars: ".trim(count_chars($l,3))." [".strlen(trim(count_chars($l,3)))."]\n";
-            if($lenmax < strlen(preg_replace("/[^A-Z]/", "", $l))) $lenmax = strlen(preg_replace("/[^A-Z]/", "", $l));
-            $words += str_word_count($l);
-          }
-          ?></pre>
+        <div class="alert alert-success">
+          <?php foreach($ca as $k => $line){
+            echo "Line ".($k+1).": ";
+              foreach(str_word_count($line,1) as $word){
+                $wac[$word] += 1;
+                echo "<a href='#".$word.$wac[$word]."' class='wcc'>".$word."</a> ";
+              }
+              echo "</br>";
+            }
+            ?>
+        </div>
       </div>
 
       <div class="col-sm-12">
@@ -92,28 +73,30 @@ $words_array = json_decode($words_json, true);
                 <th>Word</th>
                 <th>Length</th>
                 <th>Line</th>
-                <th>Occurrences</th>
+                <th>Occur.</th>
                 <th>Expand</th>
               </tr>
             </thead>
             <tbody>
             <?php
-            $word_array = array();
             foreach($ca as $k => $line){
               foreach(str_word_count($line,1) as $word){
+                $wa[$word] += 1;
                 ?>
               <tr>
-                <td><a href="https://www.wordnik.com/words/<?= strtolower($word); ?>" target="_blank"><?= $word; ?></a></td>
+                <td><a href="https://www.wordnik.com/words/<?= strtolower($word); ?>" target="_blank" id="<?= $word.$wa[$word]; ?>"><?= $word; ?></a></td>
                 <td><?= strlen($word); ?></td>
                 <td><?php foreach($words_array[$word]['line'] as $line) { echo $line.", "; }?></td>
                 <td><?= $words_array[$word]['count']; ?></td>
                 <td>
-                  <table class="table table-sm  table-hover table-bordered">
+                  <table class="table table-sm  table-hover table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>Definition</th>
-                        <th>Type</th>
-                        <th>Synonyms</th>
+                        <th width="5%">Speach</th>
+                        <th width="15%">Synonyms</th>
+                        <th width="15%">Type</th>
+                        <th width="15%">Has</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -123,6 +106,8 @@ $words_array = json_decode($words_json, true);
                         <td><?= $r['definition']; ?></td>
                         <td><?= ucwords($r['partOfSpeech']); ?></td>
                         <td><?php foreach($r['synonyms'] as $s){ echo $s.", "; } ?></td>
+                        <td><?php foreach($r['typeOf'] as $t){ echo $t.", "; } ?></td>
+                        <td><?php foreach($r['hasTypes'] as $h){ echo $h.", "; } ?></td>
                       </tr>
                     <?php } ?>
                     </tbody>
@@ -144,28 +129,6 @@ $words_array = json_decode($words_json, true);
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="/assets/js/bootstrap.min.js"></script>
-  <script>
-    $(function() {
-      $('.char-box').click(function(e) {
-        var letter = $(this).html();
-        $('#scratchpad').val($('#scratchpad').val()+letter);
-      });
-
-      $('.char-box').dblclick(function(e) {
-        $(this).toggleClass('char-box-click');
-        $('#scratchpad').val($('#scratchpad').val().slice(0,-2));
-      });
-      $('body').on("click", ".larrow", function(){
-        $(this).closest('.row').prepend("<div class='char-box-blank rarrow'>&rarr;</div>");
-        $(this).remove();
-      });
-      $('body').on("click", ".rarrow", function(){
-        $(this).closest('.row').append("<div class='char-box-blank larrow'>&larr;</div>");
-        $(this).remove();
-      });
-    });
-  </script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
 
 </body>
 
