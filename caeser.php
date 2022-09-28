@@ -73,8 +73,6 @@ function Cipher($ch, $key){
         </div>
       </div>
 
-
-
       <?php for($i = 1; $i <= 26; $i++){ ?>
       <div class="col-md-12">
         <div class="alert alert-warning">
@@ -84,7 +82,19 @@ function Cipher($ch, $key){
       </div>
       <?php } ?>
 
-
+			<div class="col-md-12">
+				<div class="alert alert-info">
+					<h2>Letter Count</h2>
+					<ul>
+						<?php
+						$replace = count_chars(preg_replace("/[^A-Z]/", "", $_POST['input']),1);
+						arsort($replace);
+						foreach($replace as $k => $v){
+							echo "<li>".chr($k)." - $v</li>";
+						} ?>
+					</ul>
+				</div>
+			</div>
     </div>
   </div>
 	<?php include("footer.php"); ?>

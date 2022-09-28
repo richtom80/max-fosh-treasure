@@ -2,6 +2,7 @@
 <?php
 
 include("includes/vars.php");
+require_once("vendor/autoload.php");
 
 $clue = "\"In the name of Max Fosh, dish out the fish\"
 That's all you need to spout
@@ -23,6 +24,9 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 
 $words_json = file_get_contents("words.json");
 $words_array = json_decode($words_json, true);
+
+use DaveChild\TextStatistics as TS;
+$textStatistics = new TS\TextStatistics;
 
 ?><!doctype html>
 <html lang="en">
@@ -57,39 +61,52 @@ $words_array = json_decode($words_json, true);
               foreach(str_word_count($line,1) as $word){
                 $wac[$word] += 1;
                 echo "<a href='#".$word.$wac[$word]."' class='wcc'>".$word."</a> ";
+                $words++;
               }
               echo "</br>";
             }
             ?>
         </div>
       </div>
-
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
       <div class="col-sm-12">
         <div class="alert alert-info">
           <p>Words: <?= $words; ?></p>
           <table class="table table-striped table-bordered">
-            <thead class="table-dark">
-              <tr>
-                <th>Word</th>
-                <th>Length</th>
-                <th>Line</th>
-                <th>Occur.</th>
-                <th>Expand</th>
-              </tr>
-            </thead>
-            <tbody>
+
             <?php
+            $table_id = 1;
             foreach($ca as $k => $line){
-              foreach(str_word_count($line,1) as $word){
-                $wa[$word] += 1;
+              $wc = 0;
+              $sc = 0;
+              $lc = 0;
+              ?>
+              <thead class="table-dark">
+                <tr>
+                  <th>Word</th>
+                  <th>Syl</th>
+                  <th>Length</th>
+                  <th>Line</th>
+                  <th>Occur.</th>
+                  <th>Expand</th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php foreach(str_word_count($line,1) as $word){
+                $wa[$word] += 1; $wc++;
                 ?>
               <tr>
                 <td><a href="https://www.wordnik.com/words/<?= strtolower($word); ?>" target="_blank" id="<?= $word.$wa[$word]; ?>"><?= $word; ?></a></td>
-                <td><?= strlen($word); ?></td>
+                <td><?php $sc += DaveChild\TextStatistics\Syllables::syllableCount(strtolower($word)); echo  DaveChild\TextStatistics\Syllables::syllableCount(strtolower($word)); ?></td>
+                <td><?php $lc += strlen($word); echo strlen($word); ?></td>
                 <td><?php foreach($words_array[$word]['line'] as $line) { echo $line.", "; }?></td>
                 <td><?= $words_array[$word]['count']; ?></td>
-                <td>
-                  <table class="table table-sm  table-hover table-bordered table-striped">
+                <td width="60%">
+                  <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#table-<?= $table_id; ?>">Display</button>
+                  <table class="table table-sm  table-hover table-bordered table-striped collapse" id="table-<?= $table_id; ?>">
                     <thead>
                       <tr>
                         <th>Definition</th>
@@ -114,8 +131,16 @@ $words_array = json_decode($words_json, true);
                   </table>
                 </td>
               </tr>
-            <?php } } ?>
+            <?php $table_id++; } ?>
             </tbody>
+              <tr class="table-warning">
+                <th>Words: <?= $wc; ?></th>
+                <td><?= $sc; ?></td>
+                <td><?= $lc; ?></td>
+                <td colspan="3"></td>
+              </tr>
+          <?php } ?>
+
           </table>
         </div>
       </div>

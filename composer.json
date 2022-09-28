@@ -1,6 +1,7 @@
 {
     "require": {
         "twbs/bootstrap": "^5.0",
-        "what3words/w3w-php-wrapper": "3.*"
+        "what3words/w3w-php-wrapper": "3.*",
+        "davechild/textstatistics": "^1.0"
     }
 }
