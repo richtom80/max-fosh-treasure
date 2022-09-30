@@ -4,19 +4,19 @@
 include("includes/vars.php");
 require_once("vendor/autoload.php");
 
-$clue = "\"In the name of Max Fosh, dish out the fish\"
-That's all you need to spout
-Exactly who to ask and how?
-Just use my vid to find out
-To claim the precious trout
-Neighbour on the bus or a dear old queen
-With the possibility the world is packed
-But the keeper of the secret is not close to Max
-And that's beyond a fact
-Dance in a crazy way, use a squeaky voice
-Post on TikTok videos?
-No need to spam or guess or stir things up
-Just copy what this silly song shows";
+$clue = "\"IN THE NAME OF MAX FOSH, DISH OUT THE FISH\"
+THAT'S ALL YOU NEED TO SPOUT
+EXACTLY WHO TO ASK AND HOW?
+JUST USE MY VID TO FIND OUT
+TO CLAIM THE PRECIOUS TROUT
+NEIGHBOUR ON THE BUS OR A DEAR OLD QUEEN
+WITH THE POSSIBILITY THE WORLD IS PACKED
+BUT THE KEEPER OF THE SECRET IS NOT CLOSE TO MAX
+AND THAT'S BEYOND A FACT
+DANCE IN A CRAZY WAY, USE A SQUEAKY VOICE
+POST ON TIKTOK VIDEOS?
+NO NEED TO SPAM OR GUESS OR STIR UP THINGS UP
+JUST COPY WHAT THIS SONG SILLY SHOWS";
 
 $clue = strtoupper($clue);
 
@@ -53,9 +53,9 @@ $syl::$arrProblemWords['packed'] = 1;
 
       <div class="col-md-12">
         <h1 class="mt-5">Word Analysis - GoldFOSH</h1>
-        <p class="lead">Breakdown and definition of each word including length of word, lines it occurs in, number of occurrences in
-          the clue and expanded definitions. Click the word in the clue to jump to the word analysis.<br/>
-        <a href="clue-info-transcription.php" class="btn btn-primary btn-sm">Transcribed text</a></p>
+        <p class="lead">Breakdown and definition of each word including length of word, lines it occurs in, number of occurrences
+          in the clue and expanded definitions. Click the word in the clue to jump to the word analysis.<br/>
+        <a href="clue-info.php" class="btn btn-primary btn-sm">Spoken Words</a></p>
       </div>
 
       <div class="col-md-12">
