@@ -2,6 +2,8 @@
 <?php
 
 include("includes/vars.php");
+require_once("vendor/autoload.php");
+
 
 $clue = "\"In the name of Max Fosh, dish out the fish\"
 That's all you need to spout
@@ -37,6 +39,70 @@ $clue = strtoupper($clue);
 
 $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 
+use Romans\Filter\IntToRoman;
+$filter = new IntToRoman();
+
+function gemletter($in) {
+    $values = array(
+      'a' => 6,
+      'b' => 12,
+      'c' => 18,
+      'd' => 24,
+      'e' => 30,
+      'f' => 36,
+      'g' => 42,
+      'h' => 48,
+      'i' => 54,
+      'j' => 60,
+      'k' => 66,
+      'l' => 72,
+      'm' => 78,
+      'n' => 84,
+      'o' => 90,
+      'p' => 96,
+      'q' => 102,
+      'r' => 108,
+      's' => 114,
+      't' => 120,
+      'u' => 126,
+      'v' => 132,
+      'w' => 138,
+      'x' => 144,
+      'y' => 150,
+      'z' => 156,
+    );
+    return $values[$in];
+  }
+
+  $heb_array = array (
+     'a' =>	1
+    ,'b' =>	2
+    ,'c' =>	8
+    ,'d' =>	4
+    ,'e' =>	5
+    ,'f' =>	80
+    ,'g' =>	3
+    ,'h' =>	5
+    ,'i' =>	10
+    ,'j' =>	10
+    ,'k' =>	20
+    ,'l' =>	30
+    ,'m' =>	40
+    ,'n' =>	50
+    ,'o' =>	70
+    ,'p' =>	80
+    ,'q' =>	100
+    ,'r' =>	200
+    ,'s' =>	60
+    ,'t' =>	9
+    ,'u' =>	6
+    ,'v' =>	6
+    ,'w' =>	6
+    ,'x' =>	60
+    ,'y' =>	10
+    ,'z' =>	7
+  );
+
 ?><!doctype html>
 <html lang="en">
 
@@ -48,8 +114,9 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/wordsearch.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
 
-  <title>Word Search</title>
+  <title>Number bits</title>
 </head>
 
 <body>
@@ -59,7 +126,7 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 
       <div class="col-md-12">
         <h1 class="mt-5">Number Analysis - GoldFOSH</h1>
-        <p class="lead">Use this tool as a word search in the clue with all spaces removed. <?php if($_GET['spoken'] == 1){ echo "<a href='{$_SERVER['PHP_SELF']}' class='btn btn-primary btn-sm'>Original Spoken Clue</a>"; } else { echo "<a href='{$_SERVER['PHP_SELF']}?spoken=1' class='btn btn-primary btn-sm'>Original Subtile Clue</a>"; } ?></p>
+        <p class="lead">Tool for simple number substitution of letters. <?php if($_GET['spoken'] == 1){ echo "<a href='{$_SERVER['PHP_SELF']}' class='btn btn-primary btn-sm'>Original Spoken Clue</a>"; } else { echo "<a href='{$_SERVER['PHP_SELF']}?spoken=1' class='btn btn-primary btn-sm'>Original Subtile Clue</a>"; } ?></p>
       </div>
 
       <div class="col-lg-6 col-md-12">
@@ -92,14 +159,20 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 
             foreach(str_word_count($line,1) as $word){
               $wc = 0;
+              $gc = 0;
+              $hgc = 0;
               $lt = preg_replace("/[^A-Z ]/", "", $word);
               foreach(str_split($lt) as $char){
                 $cn = (((ord(strtolower($char)) - 96) < 0) ? 0 : (ord(strtolower($char)) - 96));
                 $lc += $cn;
                 $wc += $cn;
+                $gc += gemletter(strtolower($char));
+                $hgc += $heb_array[strtolower($char)];
                 echo $char."<sup>$cn</sup> ";
               }
               $wa[$wc][$word]['line'][]= $lk+1;
+              $wa[$wc][$word]['gem'] = $gc;
+              $wa[$wc][$word]['hgem'] = $hgc;
               echo "<strong>[$word]<sup>$wc</sup></strong> ";
             }
             echo " - <em><b>LINE TOTAL: $lc</b></em><br/>";
@@ -109,31 +182,36 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
       </div>
 
       <div class="col-md-12">
-        <div class="alert alert-warning">
-          <table class="table table-bordered">
+        <div class="alert alert-warning table-responsive">
+          <table class="table table-bordered table-striped" id="word-data">
             <thead>
               <tr>
                 <th>Count</th>
+                <th>Chars</th>
                 <th>Word</th>
                 <th>Lines</th>
+                <th>Roman</th>
+                <th>Gematria</th>
               </tr>
             </thead>
             <tbody>
               <?php
-              $cword = 0;
-              foreach($wa as $k => $l){
-                foreach($l as $kl => $kw){ ?>
-              <tr <?= ($cword != $k) ? "style='border-top: solid #333'" : ""; ?> >
+                      $cword = 0;
+                      foreach($wa as $k => $l){
+                        foreach($l as $kl => $kw){ ?>
+              <tr <?= ($cword != $k) ? "style='border-top: solid #333'" : ""; ?>>
                 <td><?= $k; ?></td>
+                <td><?= strlen($kl); ?></td>
                 <td><?= $kl; ?></td>
                 <td><?php array_map(function($lines) { echo "$lines, "; }, $kw[line]); ?></td>
+                <td><?= $filter->filter($k); ?></td>
+                <td><?= $kw['hgem']; ?></td>
               </tr>
-            <?php $cword = $k; } } ?>
+              <?php $cword = $k; } } ?>
             </tbody>
           </table>
+        </div>
       </div>
-
-    </div>
   </div>
   <?php include("footer.php"); ?>
   <!-- Optional JavaScript -->
@@ -142,24 +220,12 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
   <script>
     $(function() {
-      $('.char-box').click(function(e) {
-        var letter = $(this).html();
-        $('#scratchpad').val($('#scratchpad').val()+letter);
-      });
-
-      $('.char-box').dblclick(function(e) {
-        $(this).toggleClass('char-box-click');
-        $('#scratchpad').val($('#scratchpad').val().slice(0,-2));
-      });
-      $('body').on("click", ".larrow", function(){
-        $(this).closest('.row').prepend("<div class='char-box-blank rarrow'>&rarr;</div>");
-        $(this).remove();
-      });
-      $('body').on("click", ".rarrow", function(){
-        $(this).closest('.row').append("<div class='char-box-blank larrow'>&larr;</div>");
-        $(this).remove();
+      $('#word-data').DataTable({
+        "pageLength": 100
       });
     });
   </script>
