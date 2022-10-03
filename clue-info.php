@@ -65,7 +65,7 @@ $syl::$arrProblemWords['packed'] = 1;
             echo "Line ".($k+1).": ";
               foreach(str_word_count($line,1) as $word){
                 $wac[$word] += 1;
-                echo "<a href='#".$word.$wac[$word]."' class='wcc'>".$word."</a> ";
+                echo "<a href=\"#".urlencode($word.$wac[$word])."\" class='wcc'>".$word."</a> ";
                 $words++;
               }
               echo "</br>";

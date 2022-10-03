@@ -25,6 +25,9 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 $words_json = file_get_contents("words.json");
 $words_array = json_decode($words_json, true);
 
+$words_array['UP']['count'] = 2;
+$words_array['UP']['line'][] = 12;
+
 use DaveChild\TextStatistics as TS;
 $textStatistics = new TS\TextStatistics;
 
@@ -65,7 +68,7 @@ $syl::$arrProblemWords['packed'] = 1;
             echo "Line ".($k+1).": ";
               foreach(str_word_count($line,1) as $word){
                 $wac[$word] += 1;
-                echo "<a href='#".$word.$wac[$word]."' class='wcc'>".$word."</a> ";
+                echo "<a href=\"#".urlencode($word.$wac[$word])."\" class='wcc'>".$word."</a> ";
                 $words++;
               }
               echo "</br>";

@@ -31,6 +31,18 @@ $textStatistics = new TS\TextStatistics;
 $syl = new TS\Syllables();
 $syl::$arrProblemWords['packed'] = 1;
 
+$words_array['FUSH']['word'] = "FUSH";
+$words_array['FUSH']['count'] = 1;
+$words_array['FUSH']['line'][] = 1;
+
+$words_array['SHOUT']['word'] = "SHOUT";
+$words_array['SHOUT']['count'] = 1;
+$words_array['SHOUT']['line'][] = 1;
+
+$words_array['NEIGHBOR']['word'] = "NEIGHBOR";
+$words_array['NEIGHBOR']['count'] = 1;
+$words_array['NEIGHBOR']['line'][] = 5;
+
 ?><!doctype html>
 <html lang="en">
 
