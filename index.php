@@ -1,4 +1,5 @@
 <?php
+
 list($one,  $two, $three) = explode(".", $_GET['search']);
 include("includes/vars.php");
 ?><!doctype html>
