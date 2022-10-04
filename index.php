@@ -29,17 +29,21 @@ include("includes/vars.php");
         <form name="w3wsearch">
           <div class="form-group">
             <label for="one">First Word</label>
-            <input type="text" class="form-control" name="one" id="one" placeholder="Enter your first word, or leave blank" value="<?= $one; ?>" required />
+            <input type="text" class="form-control" name="one" id="one"
+              placeholder="Enter your first word, or leave blank" value="<?= $one; ?>" required />
           </div>
           <div class="form-group">
             <label for="two">Second Word</label>
-            <input type="text" class="form-control" name="two" id="two" placeholder="Enter your second word, or leave blank" value="<?= $two; ?>" required />
+            <input type="text" class="form-control" name="two" id="two"
+              placeholder="Enter your second word, or leave blank" value="<?= $two; ?>" required />
           </div>
           <div class="form-group">
             <label for="three">Third Word</label>
-            <input type="text" class="form-control" name="three" id="three" placeholder="Enter your thrid word, or leave blank" value="<?= $three; ?>" required />
+            <input type="text" class="form-control" name="three" id="three"
+              placeholder="Enter your thrid word, or leave blank" value="<?= $three; ?>" required />
           </div>
-          <div class="form-group"><button type="button" id="load-results" class="btn btn-success">Lookup Suggestions</button></div>
+          <div class="form-group"><button type="button" id="load-results" class="btn btn-success">Lookup
+              Suggestions</button></div>
           <div id="linkHolder" class="alert alert-info" title="Right click to copy link">Lookup to Load Link</div>
         </form>
       </div>
