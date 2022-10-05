@@ -87,6 +87,7 @@ $syl::$arrProblemWords['squeaky'] = 2;
             <?php
             $table_id = 1;
             $lct = 0;
+            $sylc = 0;
             foreach($ca as $k => $line){
               $wc = 0;
               $sc = 0;
@@ -108,7 +109,7 @@ $syl::$arrProblemWords['squeaky'] = 2;
                 ?>
               <tr>
                 <td><a href="https://www.wordnik.com/words/<?= strtolower($word); ?>" target="_blank" id="<?= $word.$wa[$word]; ?>"><?= $word; ?></a></td>
-                <td><?php $sc += $syl::syllableCount(strtolower($word)); echo  $syl::syllableCount(strtolower($word)); ?></td>
+                <td><?php $sc += $syl::syllableCount(strtolower($word)); $sylc += $syl::syllableCount(strtolower($word)); echo  $syl::syllableCount(strtolower($word)); ?></td>
                 <td><?php $lc += strlen($word); echo strlen($word); ?></td>
                 <td><?php foreach($words_array[$word]['line'] as $line) { echo $line.", "; }?></td>
                 <td><?= $words_array[$word]['count']; ?></td>
@@ -162,7 +163,7 @@ $syl::$arrProblemWords['squeaky'] = 2;
             <tfoot class="table-dark">
               <tr>
                 <th>Words: <?= $words; ?></th>
-                <th><?= $syl::syllableCount(strtolower($clue)); ?></th>
+                <th><?= $sylc; ?></th>
                 <th><?= $lct; ?></th>
                 <th colspan="3">
                   <strong>Used Chr:</strong>
