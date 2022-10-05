@@ -82,7 +82,10 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 
         <div class="alert alert-info">
           <p>Use the arrow spaces to move the lines, if it helps.  Click once to add letter to scratchpad, double click to highlight. This is probably better on desktop rather than mobile.  Also there is no state management, so refreshing the page will loose anything you've done.</p>
-          <p><a href="wordsearch.php" class="btn btn-primary btn-sm">Grid without spaces</a></p>
+          <p>
+            <a href="wordsearch.php" class="btn btn-primary btn-sm">Grid without spaces</a>
+            <button class="btn btn-warning btn-sm float-end" type="button" id="colour-toggle">Turn On Colours</button>
+          </p>
           <?php
           $rl = $lenmax * 30;
           foreach($ca as $line){
@@ -90,7 +93,7 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
             $lc = 1;
             $lt = $line;
             foreach(str_split($lt) as $char){
-              echo "<div class='char-box'>$char</div>\n";
+              echo "<div class='char-box' data-keynumb='".(((ord(strtolower($char)) - 96) < 0) ? 0 : (ord(strtolower($char)) - 96))."'>$char</div>\n";
               $lc++;
             }
             for($i = 0; $i <= $lenmax - $lc; $i++){
@@ -136,6 +139,11 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
       $('body').on("click", ".rarrow", function(){
         $(this).closest('.row').append("<div class='char-box-blank larrow'>&larr;</div>");
         $(this).remove();
+      });
+      $('body').on("click", "#colour-toggle", function(){
+        $('.char-box').each(function(e){
+          $(this).addClass("letter-"+$(this).data('keynumb'));
+        });
       });
     });
   </script>

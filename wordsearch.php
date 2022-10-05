@@ -87,7 +87,9 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
             <a href="wordsearch-spaces.php" class="btn btn-primary btn-sm">Grid with all chars</a>
             <a href="wordsearch-large.php" class="btn btn-primary btn-sm">Grid with large with numbers</a>
             <a href="wordsearch-extra.php" class="btn btn-primary btn-sm">Grid with extra spaces</a>
+            <button class="btn btn-warning btn-sm float-end" type="button" id="colour-toggle">Turn On Colours</button>
           </p>
+          
           <?php
           $rl = $lenmax * 30;
           foreach($ca as $line){
@@ -95,7 +97,7 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
             $lc = 1;
             $lt = preg_replace("/[^A-Z]/", "", $line);
             foreach(str_split($lt) as $char){
-              echo "<div class='char-box'>$char</div>\n";
+              echo "<div class='char-box' data-keynumb='".(((ord(strtolower($char)) - 96) < 0) ? 0 : (ord(strtolower($char)) - 96))."'>$char</div>\n";
               $lc++;
             }
             for($i = 0; $i <= $lenmax - $lc; $i++){
@@ -141,6 +143,11 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
       $('body').on("click", ".rarrow", function(){
         $(this).closest('.row').append("<div class='char-box-blank larrow'>&larr;</div>");
         $(this).remove();
+      });
+      $('body').on("click", "#colour-toggle", function(){
+        $('.char-box').each(function(e){
+          $(this).addClass("letter-"+$(this).data('keynumb'));
+        });
       });
     });
   </script>
