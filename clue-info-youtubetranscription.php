@@ -30,6 +30,8 @@ $textStatistics = new TS\TextStatistics;
 
 $syl = new TS\Syllables();
 $syl::$arrProblemWords['packed'] = 1;
+$syl::$arrProblemWords['queen'] = 1;
+$syl::$arrProblemWords['squeaky'] = 2;
 
 $words_array['FUSH']['word'] = "FUSH";
 $words_array['FUSH']['count'] = 1;

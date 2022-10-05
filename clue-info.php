@@ -30,6 +30,9 @@ $textStatistics = new TS\TextStatistics;
 
 $syl = new TS\Syllables();
 $syl::$arrProblemWords['packed'] = 1;
+$syl::$arrProblemWords['queen'] = 1;
+$syl::$arrProblemWords['squeaky'] = 2;
+
 
 ?><!doctype html>
 <html lang="en">
