@@ -42,9 +42,9 @@ include("includes/vars.php");
             <input type="text" class="form-control" name="three" id="three"
               placeholder="Enter your thrid word, or leave blank" value="<?= $three; ?>" required />
           </div>
-          <div class="form-group"><button type="button" id="load-results" class="btn btn-success">Lookup
+          <div class="form-group"><button type="button" id="load-results" class="btn btn-success my-2">Lookup
               Suggestions</button></div>
-          <div id="linkHolder" class="alert alert-info" title="Right click to copy link">Lookup to Load Link</div>
+          <div id="linkHolder" class="alert alert-info my-2" title="Right click to copy link">Lookup to Load Link</div>
         </form>
       </div>
       <div class="col-md-8 col-sm-12">
