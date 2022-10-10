@@ -18,6 +18,22 @@ Post on TikTok videos?
 No need to spam or guess or stir things up
 Just copy what this silly song shows";
 
+if($_GET['transcribed'] == 1){
+    $clue = "\"IN THE NAME OF MAX FOSH, DISH OUT THE FISH\"
+    THAT'S ALL YOU NEED TO SPOUT
+    EXACTLY WHO TO ASK AND HOW?
+    JUST USE MY VID TO FIND OUT
+    TO CLAIM THE PRECIOUS TROUT
+    NEIGHBOUR ON THE BUS OR A DEAR OLD QUEEN
+    WITH THE POSSIBILITY THE WORLD IS PACKED
+    BUT THE KEEPER OF THE SECRET IS NOT CLOSE TO MAX
+    AND THAT'S BEYOND A FACT
+    DANCE IN A CRAZY WAY, USE A SQUEAKY VOICE
+    POST ON TIKTOK VIDEOS?
+    NO NEED TO SPAM OR GUESS OR STIR UP THINGS UP
+    JUST COPY WHAT THIS SONG SILLY SHOWS";
+}
+
 $clue = strtoupper($clue);
 
 $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
@@ -55,10 +71,13 @@ $syl::$arrProblemWords['squeaky'] = 2;
     <div class="row">
 
       <div class="col-md-12">
-        <h1 class="mt-5">Word Analysis - GoldFOSH</h1>
-        <p class="lead">Breakdown and definition of each word including length of word, lines it occurs in, number of occurrences in
-          the clue and expanded definitions. Click the word in the clue to jump to the word analysis.<br/>
-        <a href="clue-info-transcription.php" class="btn btn-primary btn-sm">Transcribed text</a></p>
+        <h1 class="mt-5">Alphabet Analysis - GoldFOSH</h1>
+        <p class="lead">Alphabet analysis line by line.<br/>
+        <?php if($_GET['transcribed'] != 1){ ?>
+        <a href="clue-alphabet.php?transcribed=1" class="btn btn-primary btn-sm">Transcribed text</a></p>
+        <?php } else { ?>
+            <a href="clue-alphabet.php" class="btn btn-primary btn-sm">Spoken text</a></p>
+        <?php } ?>
       </div>
 
       <div class="col-md-12">
@@ -78,11 +97,11 @@ $syl::$arrProblemWords['squeaky'] = 2;
       </div>
     </div>
   </div>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="alert alert-info table-responsive">
-          <table class="table table-striped table-bordered table-sm" style="width:auto;">
+          <table class="table table-striped table-bordered table-sm table-hover" style="width:auto;">
             <thead class="table-dark">
                 <tr>
                   <th style='width: 5em'>Line</th>
