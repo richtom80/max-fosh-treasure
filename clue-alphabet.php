@@ -72,7 +72,7 @@ $syl::$arrProblemWords['squeaky'] = 2;
 
       <div class="col-md-12">
         <h1 class="mt-5">Alphabet Analysis - GoldFOSH</h1>
-        <p class="lead">Alphabet analysis line by line.<br/>
+        <p class="lead">Alphabet analysis line by line. Double click line number to highlight row.<br/>
         <?php if($_GET['transcribed'] != 1){ ?>
         <a href="clue-alphabet.php?transcribed=1" class="btn btn-primary btn-sm">Transcribed text</a></p>
         <?php } else { ?>
@@ -114,7 +114,7 @@ $syl::$arrProblemWords['squeaky'] = 2;
                 $line_char_count = count_chars(preg_replace("/[^A-Z]/", "", $line),1);
               ?>
                 <tr>
-                    <td><?= $k+1; ?></td>
+                    <td class='line-row'><?= $k+1; ?></td>
                     <?php for($a = 1; $a <= 26; $a++){ echo "<td>".$line_char_count[$a+64]."</td>"; } ?>
                 </tr>
             <?php } ?>
@@ -132,6 +132,16 @@ $syl::$arrProblemWords['squeaky'] = 2;
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="/assets/js/bootstrap.min.js"></script>
+
+  <script>
+    $(function() {
+
+      $('.line-row').dblclick(function(e) {
+        let trpartent = $(this).closest('tr');
+        trpartent.toggleClass('table-warning');
+      });
+    });
+    </script>
 
 </body>
 
