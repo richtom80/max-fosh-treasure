@@ -8,6 +8,7 @@
     <li class="nav-item"><a href="/wordsearch.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/wordsearch.php") ? "active" : ""; ?>">Wordsearch</a></li>
     <li class="nav-item"><a href="/clue-info.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/clue-info.php") ? "active" : ""; ?>">Words Analysis</a></li>
     <li class="nav-item"><a href="/number-info.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/number-info.php") ? "active" : ""; ?>">Number Analysis</a></li>
+    <li class="nav-item"><a href="/clue-alphabet.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/clue-alphabet.php") ? "active" : ""; ?>">Alphabet Analysis</a></li>
     <li class="nav-item"><a href="/caeser.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/caeser.php") ? "active" : ""; ?>">Caeser Cypher</a></li>
   </ul>
 </header>
