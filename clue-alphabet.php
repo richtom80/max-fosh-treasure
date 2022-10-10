@@ -41,15 +41,6 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 $words_json = file_get_contents("words.json");
 $words_array = json_decode($words_json, true);
 
-use DaveChild\TextStatistics as TS;
-$textStatistics = new TS\TextStatistics;
-
-$syl = new TS\Syllables();
-$syl::$arrProblemWords['packed'] = 1;
-$syl::$arrProblemWords['queen'] = 1;
-$syl::$arrProblemWords['squeaky'] = 2;
-
-
 ?><!doctype html>
 <html lang="en">
 
@@ -62,7 +53,7 @@ $syl::$arrProblemWords['squeaky'] = 2;
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/wordsearch.css">
 
-  <title>Word Info - GoldFOSH</title>
+  <title>Alphabet Info - GoldFOSH</title>
 </head>
 
 <body>
@@ -72,7 +63,7 @@ $syl::$arrProblemWords['squeaky'] = 2;
 
       <div class="col-md-12">
         <h1 class="mt-5">Alphabet Analysis - GoldFOSH</h1>
-        <p class="lead">Alphabet analysis line by line. Double click line to highlight row.<br/>
+        <p class="lead">Alphabet analysis line by line. Click line to highlight row.<br/>
         <?php if($_GET['transcribed'] != 1){ ?>
         <a href="clue-alphabet.php?transcribed=1" class="btn btn-primary btn-sm">Transcribed text</a></p>
         <?php } else { ?>
@@ -84,13 +75,11 @@ $syl::$arrProblemWords['squeaky'] = 2;
         <h2>Clue</h2>
         <div class="alert alert-success">
           <?php foreach($ca as $k => $line){
-            echo "Line ".($k+1).": ";
+            echo "<div id='clue-line-".($k+1)."'>Line ".($k+1).": ";
               foreach(str_word_count($line,1) as $word){
-                $wac[$word] += 1;
                 echo $word." ";
-                $words++;
               }
-              echo "</br>";
+              echo "</div>";
             }
             ?>
         </div>
@@ -113,7 +102,7 @@ $syl::$arrProblemWords['squeaky'] = 2;
             foreach($ca as $k => $line){
                 $line_char_count = count_chars(preg_replace("/[^A-Z]/", "", $line),1);
               ?>
-                <tr>
+                <tr data-rowid="<?= $k+1; ?>">
                     <td class='line-row'><?= $k+1; ?></td>
                     <?php for($a = 1; $a <= 26; $a++){ echo "<td>".$line_char_count[$a+64]."</td>"; } ?>
                 </tr>
@@ -136,9 +125,11 @@ $syl::$arrProblemWords['squeaky'] = 2;
   <script>
     $(function() {
 
-      $('tbody td').dblclick(function(e) {
+      $('tbody td').click(function(e) {
         let trpartent = $(this).closest('tr');
+        let trrowid = trpartent.data('rowid');
         trpartent.toggleClass('table-warning');
+        $('#clue-line-'+trrowid).toggleClass('bg-warning');
       });
     });
     </script>
