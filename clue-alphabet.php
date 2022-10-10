@@ -72,7 +72,7 @@ $syl::$arrProblemWords['squeaky'] = 2;
 
       <div class="col-md-12">
         <h1 class="mt-5">Alphabet Analysis - GoldFOSH</h1>
-        <p class="lead">Alphabet analysis line by line. Double click line number to highlight row.<br/>
+        <p class="lead">Alphabet analysis line by line. Double click line to highlight row.<br/>
         <?php if($_GET['transcribed'] != 1){ ?>
         <a href="clue-alphabet.php?transcribed=1" class="btn btn-primary btn-sm">Transcribed text</a></p>
         <?php } else { ?>
@@ -136,7 +136,7 @@ $syl::$arrProblemWords['squeaky'] = 2;
   <script>
     $(function() {
 
-      $('.line-row').dblclick(function(e) {
+      $('tbody td').dblclick(function(e) {
         let trpartent = $(this).closest('tr');
         trpartent.toggleClass('table-warning');
       });
