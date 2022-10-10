@@ -75,11 +75,7 @@ $words_array = json_decode($words_json, true);
         <h2>Clue</h2>
         <div class="alert alert-success">
           <?php foreach($ca as $k => $line){
-            echo "<div id='clue-line-".($k+1)."'>Line ".($k+1).": ";
-              foreach(str_word_count($line,1) as $word){
-                echo $word." ";
-              }
-              echo "</div>";
+            echo "<div id='clue-line-".($k+1)."' class='px-4'>Line ".($k+1).": {$line}</div>";
             }
             ?>
         </div>
@@ -93,7 +89,7 @@ $words_array = json_decode($words_json, true);
           <table class="table table-striped table-bordered table-sm table-hover" style="width:auto;">
             <thead class="table-dark">
                 <tr>
-                  <th style='width: 5em'>Line</th>
+                  <th style='width: 2em'>#</th>
                   <?php for($a = 1; $a <= 26; $a++){ echo "<th style='width: 2em'>".chr($a+64)."</th>"; } ?>
                 </tr>
               </thead>
