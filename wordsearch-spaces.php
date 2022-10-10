@@ -142,7 +142,7 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
       });
       $('body').on("click", "#colour-toggle", function(){
         $('.char-box').each(function(e){
-          $(this).addClass("letter-"+$(this).data('keynumb'));
+          $(this).toggleClass("letter-"+$(this).data('keynumb'));
         });
       });
     });
