@@ -87,6 +87,7 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
             <a href="wordsearch-spaces.php" class="btn btn-primary btn-sm">Grid with all chars</a>
             <a href="wordsearch-large.php" class="btn btn-primary btn-sm">Grid with large with numbers</a>
             <a href="wordsearch-extra.php" class="btn btn-primary btn-sm">Grid with extra spaces</a>
+            
             <button class="btn btn-warning btn-sm float-end" type="button" id="colour-toggle">Turn On Colours</button>
           </p>
           
@@ -97,7 +98,7 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
             $lc = 1;
             $lt = preg_replace("/[^A-Z]/", "", $line);
             foreach(str_split($lt) as $char){
-              echo "<div class='char-box' data-keynumb='".(((ord(strtolower($char)) - 96) < 0) ? 0 : (ord(strtolower($char)) - 96))."'>$char</div>\n";
+              echo "<div class='char-box ln-{$lc}' data-keynumb='".(((ord(strtolower($char)) - 96) < 0) ? 0 : (ord(strtolower($char)) - 96))."'>$char</div>\n";
               $lc++;
             }
             for($i = 0; $i <= $lenmax - $lc; $i++){
@@ -106,6 +107,19 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
             echo "</div>";
           }
           ?>
+        </div>
+        <div class="card alert-danger p-3">
+          <form class="row g-3" id="removeLetters">
+            <div class="col-auto">
+              <p>Leave every x letter</p>
+            </div>
+            <div class="col-auto">
+              <input type="number" class="form-control" id="ln" placeholder="Number">
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-3">Remove</button>
+            </div>
+          </form>
         </div>
       </div>
 
@@ -148,6 +162,15 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
         $('.char-box').each(function(e){
           $(this).toggleClass("letter-"+$(this).data('keynumb'));
         });
+      });
+      $('#removeLetters').submit(function(e){
+        e.preventDefault();
+        $('.char-box').show();
+        for(let i = 1; i<40; i++){
+          if(i%$('#ln').val() != 0){
+            $('.ln-'+i).hide();
+          }
+        };
       });
     });
   </script>
