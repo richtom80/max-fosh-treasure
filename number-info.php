@@ -103,6 +103,35 @@ function gemletter($in) {
     ,'z' =>	7
   );
 
+  $scrabble_array = array(
+    'A' => 1,
+    'B' => 3,
+    'C' => 3,
+    'D' => 2,
+    'E' => 1,
+    'F' => 4,
+    'G' => 2,
+    'H' => 4,
+    'I' => 1,
+    'J' => 8,
+    'K' => 5,
+    'L' => 1,
+    'M' => 3,
+    'N' => 1,
+    'O' => 1,
+    'P' => 3,
+    'Q' => 10,
+    'R' => 1,
+    'S' => 1,
+    'T' => 1,
+    'U' => 1,
+    'V' => 4,
+    'W' => 4,
+    'X' => 8,
+    'Y' => 4,
+    'Z' => 10
+  );
+
 ?><!doctype html>
 <html lang="en">
 
@@ -160,6 +189,7 @@ function gemletter($in) {
             foreach(str_word_count($line,1) as $word){
               $wc = 0;
               $gc = 0;
+              $sac = 0;
               $hgc = 0;
               $lt = preg_replace("/[^A-Z ]/", "", $word);
               foreach(str_split($lt) as $char){
@@ -167,12 +197,14 @@ function gemletter($in) {
                 $lc += $cn;
                 $wc += $cn;
                 $gc += gemletter(strtolower($char));
+                $sac += $scrabble_array[$char];
                 $hgc += $heb_array[strtolower($char)];
                 echo $char."<sup>$cn</sup> ";
               }
               $wa[$wc][$word]['line'][]= $lk+1;
               $wa[$wc][$word]['gem'] = $gc;
               $wa[$wc][$word]['hgem'] = $hgc;
+              $wa[$wc][$word]['scrabble'] = $sac;
               echo "<strong>[$word]<sup>$wc</sup></strong> ";
             }
             echo " - <em><b>LINE TOTAL: $lc</b></em><br/>";
@@ -192,6 +224,7 @@ function gemletter($in) {
                 <th>Lines</th>
                 <th>Roman</th>
                 <th>Gematria</th>
+                <th>Scrabble</th>
               </tr>
             </thead>
             <tbody>
@@ -206,6 +239,7 @@ function gemletter($in) {
                 <td><?php array_map(function($lines) { echo "$lines, "; }, $kw[line]); ?></td>
                 <td><?= $filter->filter($k); ?></td>
                 <td><?= $kw['hgem']; ?></td>
+                <td><?= $kw['scrabble']; ?></td>
               </tr>
               <?php $cword = $k; } } ?>
             </tbody>
