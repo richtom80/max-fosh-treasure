@@ -52,7 +52,7 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
   <link rel="stylesheet" href="/assets/css/wordsearch.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
 
-  <title>Number bits</title>
+  <title>Null Cipher bits</title>
 </head>
 
 <body>
@@ -87,31 +87,55 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 
         <div class="alert alert-info">
           <h2>First Letter</h2>
-          <?php
+          <pre><?php
           foreach($ca as $lk => $line){
             foreach(str_word_count($line,1) as $word){
              echo substr(preg_replace("/[^A-Z]/", "",$word),0,1);
             }
           } 
-          ?>
+          ?></pre>
           <h2>Last Letter</h2>
-          <?php
+          <pre><?php
           foreach($ca as $lk => $line){
             foreach(str_word_count($line,1) as $word){
              echo substr(preg_replace("/[^A-Z]/", "",$word),-1,1);
             }
-          }
+          } echo "</pre>";
           for($i=1; $i<= 8; $i++){ 
           ?>
           <h2><?= $i+1; ?> Letter</h2>
-          <?php
+          <pre><?php
           foreach($ca as $lk => $line){
             foreach(str_word_count($line,1) as $word){
              echo substr(preg_replace("/[^A-Z]/", "",$word),$i,1);
             }
-          } 
+          } echo "</pre>";
           }
-          ?>  
+          ?>
+          <h2>Middle Letter - UP</h2>
+          <pre><?php
+          foreach($ca as $lk => $line){
+            foreach(str_word_count($line,1) as $word){
+                $len = strlen(preg_replace("/[^A-Z]/", "", $word));
+                if($len%2 == 0){
+                    $half = ($len/2)+1; 
+                } else { $half = round($len/2, 0, PHP_ROUND_HALF_UP); }
+                    echo substr(preg_replace("/[^A-Z]/", "",$word),$half-1,1);
+                }
+          } 
+          ?></pre>
+          <h2>Middle Letter - DOWN</h2>
+          <pre><?php
+          foreach($ca as $lk => $line){
+            foreach(str_word_count($line,1) as $word){
+                $len = strlen(preg_replace("/[^A-Z]/", "", $word));
+                if($len%2 == 0){
+                    $half = ($len/2);
+                } else { $half = round($len/2, 0, PHP_ROUND_HALF_UP); }
+             echo substr(preg_replace("/[^A-Z]/", "",$word),$half-1,1);
+            }
+          } 
+          ?></pre>
         </div>
       </div>
   </div>
