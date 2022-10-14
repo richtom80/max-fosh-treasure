@@ -14,7 +14,6 @@ Required to create vars file in path "/includes/var.php" with the following synt
 
 ```php
 <?php
-
 define("W3W_API_KEY", "Your w3w api key here");
 define("GOOGLE_ANALYTICS", "Your google analytics here");
 ?>
