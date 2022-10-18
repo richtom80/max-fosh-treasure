@@ -39,6 +39,8 @@ $clue = strtoupper($clue);
 
 $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 
+//https://www.quinapalus.com/cgi-bin/jumblefinder?twod=1&minl=5&maxl=31&m0=on&m2=on&m4=on&m1=on&m3=on&bmode=0&text=
+
 ?><!doctype html>
 <html lang="en">
 
@@ -136,6 +138,18 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
             }
           } 
           ?></pre>
+          <h2>First Letter Each Line</h2>
+          <pre><?php
+          foreach($ca as $lk => $line){
+            echo substr(preg_replace("/[^A-Z]/", "",$line),0,1);
+          } 
+          ?></pre>
+          <h2>Replace FISH</h2>
+          <pre><?php
+          foreach($ca as $lk => $line){
+            echo preg_replace("/[FISH \"\,\'\?]/", "",$line);
+          } 
+          ?></pre>
         </div>
       </div>
   </div>
@@ -150,8 +164,8 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
   <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
   <script>
     $(function() {
-      $('#word-data').DataTable({
-        "pageLength": 100
+      $('pre').dblclick(function(){
+        window.open("https://www.quinapalus.com/cgi-bin/jumblefinder?twod=2&minl=5&maxl=31&m0=on&m2=on&m4=on&m1=on&m3=on&bmode=0&text="+$(this).html()+"&dict=0&ent=Search",'_blank').focus();;
       });
     });
   </script>

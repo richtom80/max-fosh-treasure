@@ -103,6 +103,20 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
           }
           ?>
         </div>
+
+        <div class="card alert-warning p-3 my-2">
+          <form class="row g-3" id="highlightLetters">
+            <div class="col-auto">
+              <p>Highlight Letters</p>
+            </div>
+            <div class="col-auto">
+              <input type="text" class="form-control" id="lword" placeholder="Letters/Word">
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-3">Highlight</button>
+            </div>
+          </form>
+        </div>
       </div>
 
       <div class="col-sm-12">
@@ -144,6 +158,14 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
         $('.char-box').each(function(e){
           $(this).toggleClass("letter-"+$(this).data('keynumb'));
         });
+      });
+
+      $('#highlightLetters').submit(function(e){
+        e.preventDefault();
+        let wordstring = $('#lword').val().toUpperCase();
+        for (let i = 0; i < wordstring.length; i++) {
+          $(".char-box[data-keynumb='" + ((wordstring[i].charCodeAt()) - 64) + "']").addClass('char-box-click');
+        }
       });
     });
   </script>
