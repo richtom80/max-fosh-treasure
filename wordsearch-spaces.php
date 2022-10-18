@@ -162,6 +162,7 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 
       $('#highlightLetters').submit(function(e){
         e.preventDefault();
+        $('.char-box').removeClass('char-box-click');
         let wordstring = $('#lword').val().toUpperCase();
         for (let i = 0; i < wordstring.length; i++) {
           $(".char-box[data-keynumb='" + ((wordstring[i].charCodeAt()) - 64) + "']").addClass('char-box-click');
