@@ -49,7 +49,7 @@ function Cipher($ch, $key){
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/wordsearch.css">
 
-  <title>Caeser Cypher</title>
+  <title>Caeser Cipher</title>
 </head>
 
 <body>
@@ -58,8 +58,8 @@ function Cipher($ch, $key){
     <div class="row">
 
 			<div class="col-md-12">
-        <h1 class="mt-5">Caeser Cypher</h1>
-        <p class="lead">Quick tool to add all 26 caeser character shift cypher to clues.</p>
+        <h1 class="mt-5">Caeser Cipher</h1>
+        <p class="lead">Quick tool to add all 26 caeser character shift cipher to clues.</p>
       </div>
 
       <div class="col-md-12">
@@ -67,7 +67,7 @@ function Cipher($ch, $key){
           <h2>Input</h2>
           <form action="" method="post">
             <textarea name="input" class="form-control" rows="13"><?= $clue; ?></textarea>
-            <button type="submit" class="btn btn-primary btn-sm">Cypherise</button>
+            <button type="submit" class="btn btn-primary btn-sm">Cipherise</button>
           </form>
         </div>
       </div>
