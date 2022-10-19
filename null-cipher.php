@@ -15,7 +15,7 @@ With the possibility the world is packed
 But the keeper of the secret is not close to Max
 And that's beyond a fact
 Dance in a crazy way, use a squeaky voice
-Post on TikTok videos?
+GET on TikTok videos?
 No need to spam or guess or stir things up
 Just copy what this silly song shows";
 
@@ -30,7 +30,7 @@ WITH THE POSSIBILITY THE WORLD IS PACKED
 BUT THE KEEPER OF THE SECRET IS NOT CLOSE TO MAX
 AND THAT'S BEYOND A FACT
 DANCE IN A CRAZY WAY, USE A SQUEAKY VOICE
-POST ON TIKTOK VIDEOS?
+GET ON TIKTOK VIDEOS?
 NO NEED TO SPAM OR GUESS OR STIR UP THINGS UP
 JUST COPY WHAT THIS SONG SILLY SHOWS";
 }
@@ -86,22 +86,23 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
 
       <div class="col-md-12">
         <div class="card alert-danger p-3 my-2" >
-            <form class="row g-3" method="POST">
+            <form class="row g-3" method="GET">
               <div class="col-auto">
                 <p>Leave every x letter</p>
               </div>
               <div class="col-auto">
-                <input type="number" class="form-control" id="ln" name="ln" placeholder="Number" value="<?= $_POST['ln']; ?>">
+                <input type="number" class="form-control" id="ln" name="ln" placeholder="Number" value="<?= $_GET['ln']; ?>">
+                <input type="hidden" name="spoken" value="<?= $_GET['spoken']; ?>">
               </div>
               <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3">Show</button>
               </div>
-              <?php if(!empty($_POST['ln'])){ 
+              <?php if(!empty($_GET['ln'])){ 
                 echo "<h3>Letters Only</h3><pre>";
                 $cn = preg_replace("/[^A-Z]/", "", $clue);
                 $i = 1;
                 foreach(str_split($cn) as $l){
-                  if($i%$_POST['ln'] == 0) echo $l;
+                  if($i%$_GET['ln'] == 0) echo $l;
                   $i++;
                 }
                 echo "</pre>";
@@ -109,7 +110,7 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
                 $cn =$clue;
                 $i = 1;
                 foreach(str_split($cn) as $l){
-                  if($i%$_POST['ln'] == 0) echo $l;
+                  if($i%$_GET['ln'] == 0) echo $l;
                   $i++;
                 }
                 echo "</pre>";
