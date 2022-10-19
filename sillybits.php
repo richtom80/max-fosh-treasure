@@ -71,7 +71,7 @@ THAT'S ALL YOU NEED TO SPOUT -
 EXACTLY WHO TO ASK AND HOW? -  
 JUST USE MY VID TO FIND OUT
 TO CLAIM THE PRECIOUS TROUT -  
-NEIGHBOUR ON THE BUS OR A DEAR OLD QUEEN - OmniQueen [Horse Racing], Neigh[bour]
+NEIGHBOUR ON THE BUS OR A DEAR OLD QUEEN - OmniQueen [Horse Racing], Neigh[bour], Omnibus [Horse drawn carriage]
 WITH THE POSSIBILITY THE WORLD IS PACKED - 
 BUT THE KEEPER OF THE SECRET IS NOT CLOSE TO MAX -  
 AND THAT'S BEYOND A FACT -  
@@ -99,6 +99,8 @@ DANCE IN A CRAZY WAY, USE A SQUEAKY VOICE
 POST ON TIKTOK VIDEOS?
 NO NEED TO SPAM OR GUESS OR STIR UP THINGS UP
 JUST COPY WHAT THIS SONG SILLY SHOWS</pre>
+</div>
+</div>
 </div>
 <?php include("footer.php"); ?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
