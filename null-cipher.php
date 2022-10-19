@@ -85,6 +85,37 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
       </div>
 
       <div class="col-md-12">
+        <div class="card alert-danger p-3 my-2" >
+            <form class="row g-3" method="POST">
+              <div class="col-auto">
+                <p>Leave every x letter</p>
+              </div>
+              <div class="col-auto">
+                <input type="number" class="form-control" id="ln" name="ln" placeholder="Number" value="<?= $_POST['ln']; ?>">
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Show</button>
+              </div>
+              <?php if(!empty($_POST['ln'])){ 
+                echo "<h3>Letters Only</h3><pre>";
+                $cn = preg_replace("/[^A-Z]/", "", $clue);
+                $i = 1;
+                foreach(str_split($cn) as $l){
+                  if($i%$_POST['ln'] == 0) echo $l;
+                  $i++;
+                }
+                echo "</pre>";
+                echo "<h3>All Chars</h3><pre>";
+                $cn =$clue;
+                $i = 1;
+                foreach(str_split($cn) as $l){
+                  if($i%$_POST['ln'] == 0) echo $l;
+                  $i++;
+                }
+                echo "</pre>";
+                } ?>
+            </form>
+          </div>
         <h2>Null Breakdown</h2>
 
         <div class="alert alert-info">
@@ -151,7 +182,9 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
           } 
           ?></pre>
         </div>
+        
       </div>
+    </div>
   </div>
   <?php include("footer.php"); ?>
   <!-- Optional JavaScript -->
