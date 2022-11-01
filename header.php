@@ -36,6 +36,7 @@
               <ul class="dropdown-menu" aria-labelledby="dropdown03">
                 <li class="nav-item"><a href="/caeser.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/caeser.php") ? "active" : ""; ?>">Caeser Cipher</a></li>
                 <li class="nav-item"><a href="/null-cipher.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/null-cipher.php") ? "active" : ""; ?>">Null Cipher</a></li>
+                <li class="nav-item"><a href="/replace-cipher.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/replace-cipher.php") ? "active" : ""; ?>">Replace Numerate</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
