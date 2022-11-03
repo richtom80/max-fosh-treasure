@@ -18,6 +18,7 @@
                 <li class="nav-item"><a href="/wordsearch-spaces.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/wordsearch-spaces.php") ? "active" : ""; ?>">All Chars</a></li>
                 <li class="nav-item"><a href="/wordsearch-large.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/wordsearch-large.php") ? "active" : ""; ?>">All Chars Large</a></li>
                 <li class="nav-item"><a href="/wordsearch-extra.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/wordsearch-extra.php") ? "active" : ""; ?>">Extra Space</a></li>
+                <li class="nav-item"><a href="/wordsearch-textbox.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/wordsearch-textbox.php") ? "active" : ""; ?>">Text Box</a></li>
                 <li class="nav-item"><a href="/draggable.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/draggable.php") ? "active" : ""; ?>">Draggable</a></li>
               </ul>
             </li>
