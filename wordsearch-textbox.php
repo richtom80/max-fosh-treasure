@@ -93,14 +93,14 @@ $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
             $lc = 1;
             $lt = $line;
             foreach(str_split($lt) as $char){
-              echo "<div class='char-box-lg' data-keynumb='".(((ord(strtolower($char)) - 96) < 0) ? 0 : (ord(strtolower($char)) - 96))."'>
+              echo "<div class='char-box-lgtb' data-keynumb='".(((ord(strtolower($char)) - 96) < 0) ? 0 : (ord(strtolower($char)) - 96))."'>
                 
-                <input type='text' value='$char' style='width: 2em; border: none' />
+                <input type='text' value='$char' style='width: 1em; border: none' />
                 </div>\n";
               $lc++;
             }
             for($i = 0; $i <= $lenmax - $lc; $i++){
-              echo "<div class='char-box-lg char-box-blank larrow'>&larr;</div>\n";
+              echo "<div class='char-box-lgtb char-box-blank larrow'>&larr;</div>\n";
             }
             echo "</div>";
           }
