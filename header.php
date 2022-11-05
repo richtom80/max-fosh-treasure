@@ -43,6 +43,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Bits</a>
               <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                <li class="nav-item"><a href="/mosh.fun.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/mosh.fun.php") ? "active" : ""; ?>">Mosh Fun</a></li>
                 <li class="nav-item"><a href="/sillybits.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/sillybits.php") ? "active" : ""; ?>">Silly Bits</a></li>
                 <li class="nav-item"><a href="/jumbler.php" class="nav-link <?= ($_SERVER['PHP_SELF'] == "/jumbler.php") ? "active" : ""; ?>">Jumbler</a></li>
               </ul>

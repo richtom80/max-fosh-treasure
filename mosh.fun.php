@@ -39,8 +39,8 @@ JUST COPY WHAT THIS SONG SILLY SHOWS - Simon Says / Sisqo Thong Song*/
                     <li>URL: <a href="https://mosh.fun/" target="_blank">https://mosh.fun/</a>
                     <li>Domain Registered: 23rd July 2022 <acronym title="Before Hunt Release">BHR</acronym></li>
                     <li>Alternate URL: <a href="http://mosh.creationeer.co.uk" target="_blank">http://mosh.creationeer.co.uk</a></li>
-                    <li>Domain Diagnostics: <a href="https://www.domaindiagnosis.com/index.php?query=mosh.fun" target="_blank">://www.domaindiagnosis.com/index.php?query=mosh.fun</a></li>
-                    <li>Screenshoot of site 23rd July 2022 <acronym title="Before Hunt Release">BHR</acronym>: <a href="https://www.domaindiagnosis.com/index.php?query=mosh.fun" target="_blank">https://www.domaindiagnosis.com/index.php?query=mosh.fun</a></li>
+                    <li>Domain Diagnostics: <a href="https://www.domaindiagnosis.com/index.php?query=mosh.fun" target="_blank">http://www.domaindiagnosis.com/index.php?query=mosh.fun</a></li>
+                    <li>Screenshot of site 23rd July 2022 <acronym title="Before Hunt Release">BHR</acronym>: <a href="https://www.domaindiagnosis.com/index.php?query=mosh.fun" target="_blank">https://www.domaindiagnosis.com/index.php?query=mosh.fun</a></li>
                 </ul>
 
                 <h2>Links from this</h2>
@@ -54,6 +54,94 @@ JUST COPY WHAT THIS SONG SILLY SHOWS - Simon Says / Sisqo Thong Song*/
                 <h2>Other Bits</h2>
                 <p><img src="/assets/images/screenshot_image.jpeg" style="width: 80%;" /><figcaption>Screenshot: 2022-07-23</figcaption></p>
                 <p><a href="/assets/images/moshfun_files/" target="_blank">All Gifs</a></p>
+
+                <h3>Code Before 5th Nov</h3>
+                <textarea disable rows="30"><!DOCTYPE html>
+<html><body style="background-color:yellow;">
+
+<p><img src="welcome.gif"></p>
+
+<p>My name is Mosh and I have been waiting for you!</p>
+
+<p>Hope you enjoy this page <img src="smile.gif"></p>
+
+<p><img src="info.gif"></p>
+
+<p><img src="funky.gif"><img src="monkey.gif"></p>
+
+<p>So what do you want to know about me?  Well, I'm a bit Silly</p>
+
+<p>I have a dog called Tothe <img src="dog.gif"></p> 
+
+<p><img src="film.gif">I love watching films at the local iMax!</p>
+
+<p>My star sign is Pisces (of course) <img src="astro.gif"></p>
+
+And I like to collect spoons.
+
+<p>I prefer the old school way of doing things.</p>
+
+<p>If you can't find how to contact me below come back later.</p>
+<p>If you do try to get in touch, please include some way that I can contact you otherwise I won't be able to reply!!!</p>
+
+<p><img src="silliometer.gif">Hello - what's this?! A Silliometer? <img src="clock.gif"> <img src="shhh.gif"></p>
+<p><img src="contact1.gif"><img src="contact2.gif"><img src="contact3.gif"><img src="contact4.gif"></p>
+
+<p><img src="contact.gif"><img src="num.gif"></p>
+
+
+<p>&nbsp;</p>
+
+
+
+</body></textarea>
+<h3>Code after 5th Nov</h3>
+                <textarea disable rows="30">
+<!DOCTYPE html>
+<html>
+<!--Why are you wasting time reading this?!-->
+<!--But don't you  think my web page writing thingy skills are great?!-->
+
+<body style="background-color:yellow;">
+
+<p><img src="welcome.gif" /></p>
+
+<p>My name is Mosh and I have been waiting for you!</p>
+
+<p>Hope you enjoy this page <img src="smile.gif" /></p>
+
+<p><img src="info.gif" /></p>
+
+<p><img src="funky.gif" /><img src="monkey.gif" /></p>
+
+<p>So what do you want to know about me?  Well, I'm a bit Silly</p>
+
+<p>I have a dog called Tothe <img src="dog.gif" /></p> 
+
+<p><img src="film.gif" />I love watching films at the local iMax!</p>
+
+<p>My star sign is Pisces (of course) <img src="astro.gif" /></p>
+
+And I like to collect spoons.
+
+<p>I prefer the old school way of doing things.</p>
+
+<p>If you can't find how to contact me below come back later.</p>
+
+<p><b>Contacting my friends won't help you. It might even hinder you!  Everything you need to know will appear here.</b></p>
+
+<p>If you do try to get in touch, please include some way that I can contact you otherwise I won't be able to reply!!!</p>
+
+<p><img src="silliometer.gif" />Hello - what's this?! A Silliometer? <img src="clock.gif" /> <img src="shhh.gif" /></p>
+<p><img src="contact1.gif" /><img src="contact2.gif" /><img src="contact3.gif" /><img src="contact4.gif" /></p>
+
+<p><img src="contact.gif" /><img src="num.gif" /></p>
+
+
+<p>&nbsp;</p>
+</body>
+</html>
+</textarea>
             </div>
         </div>
     </div>
