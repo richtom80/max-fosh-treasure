@@ -35,6 +35,20 @@ NO NEED TO SPAM OR GUESS OR STIR UP THINGS UP
 JUST COPY WHAT THIS SONG SILLY SHOWS";
 }
 
+if($_GET['mosh'] == 1){ 
+  $clue = "My name is Mosh and I have been waiting for you!
+Hope you enjoy this page 
+So what do you want to know about me? Well, I'm a bit Silly
+I have a dog called Tothe 
+I love watching films at the local iMax!
+My star sign is Pisces (of course) 
+And I like to collect spoons.
+I prefer the old school way of doing things.  
+If you can't find how to contact me below come back later.
+If you do try to get in touch, please include some way that I can contact you otherwise I won't be able to reply!!!
+Hello - what's this?! A Silliometer?";
+}
+
 $clue = strtoupper($clue);
 
 $ca = $array = preg_split("/\r\n|\n|\r/", $clue);
