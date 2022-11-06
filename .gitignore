@@ -11,3 +11,5 @@ composer.lock
 max.fosh-insta.mp4
 .vscode
 .vscode/*
+assets/monsters.zip
+.DS_Store

@@ -40,7 +40,7 @@ JUST COPY WHAT THIS SONG SILLY SHOWS - Simon Says / Sisqo Thong Song*/
                     <li>Domain Registered: 23rd July 2022 <acronym title="Before Hunt Release">BHR</acronym></li>
                     <li>Alternate URL: <a href="http://mosh.creationeer.co.uk" target="_blank">http://mosh.creationeer.co.uk</a> - found in the SSL Cert <a href="https://en.wikipedia.org/wiki/Subject_Alternative_Name" target="_blank">SAN</a></li>
                     <li>Domain Diagnostics: <a href="https://www.domaindiagnosis.com/index.php?query=mosh.fun" target="_blank">http://www.domaindiagnosis.com/index.php?query=mosh.fun</a></li>
-                    <li>Screenshot of site 23rd July 2022 <acronym title="Before Hunt Release">BHR</acronym>: <a href="https://www.domaindiagnosis.com/index.php?query=mosh.fun" target="_blank">https://www.domaindiagnosis.com/index.php?query=mosh.fun</a></li>
+                    <li>Screenshot of site 23rd July 2022 <acronym title="Before Hunt Release">BHR</acronym>: <a href="https://whois.domaintools.com/mosh.fun" target="_blank">https://whois.domaintools.com/mosh.fun</a></li>
                 </ul>
 
                 <h2>Links from this</h2>
@@ -51,6 +51,17 @@ JUST COPY WHAT THIS SONG SILLY SHOWS - Simon Says / Sisqo Thong Song*/
                     <li>Shaun has been interviewed by <a href=" https://mysteriouswritings.com/six-questions-with-shaun-whitehead-archeologist-creationeer-and-treasure-hunter/" target="_blank">MysteriousWritings</a></li>
                     <li>Shaun and Max are LinkedIn Connections</li>
                     <li>Shaun ran a <a href="https://www.treasureclub.net/publichunts/text4treasure/index.html" target="_blank">text4treasure hunt in 2003</a></li>
+                </ul>
+
+                <h2>How we got here</h2>
+
+                <ul>
+                    <li>In the name of Max Fosh → Spoonerisms → Mosh Fax</li>
+                    <li>Zocial Butterfly Clue: Foint Pun → Point (.) fun → .fun TLD</li>
+                    <li>[D]ish [O]ut [T]he Fish → dot (.)</li>
+                    <li>Dance in a crazy way → funky dance → fun-key → the key is "fun"</li>
+                    <li>-or- Dance in a crazy way → mosh [pit]</li>
+                    <li>Stirring up "find out" - i dot fun</li>
                 </ul>
 
                 <h2>Other Bits</h2>
