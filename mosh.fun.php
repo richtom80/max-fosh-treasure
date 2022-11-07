@@ -41,6 +41,7 @@ JUST COPY WHAT THIS SONG SILLY SHOWS - Simon Says / Sisqo Thong Song*/
                     <li>Alternate URL: <a href="http://mosh.creationeer.co.uk" target="_blank">http://mosh.creationeer.co.uk</a> - found in the SSL Cert <a href="https://en.wikipedia.org/wiki/Subject_Alternative_Name" target="_blank">SAN</a></li>
                     <li>Domain Diagnostics: <a href="https://www.domaindiagnosis.com/index.php?query=mosh.fun" target="_blank">http://www.domaindiagnosis.com/index.php?query=mosh.fun</a></li>
                     <li>Screenshot of site 23rd July 2022 <acronym title="Before Hunt Release">BHR</acronym>: <a href="https://whois.domaintools.com/mosh.fun" target="_blank">https://whois.domaintools.com/mosh.fun</a></li>
+                    <li>SSL Cert <a href="https://crt.sh/?id=7183126967" target="_blank">Registered 23rd July 2022 @ 12:28</a> for mosh.fun</li>
                 </ul>
 
                 <h2>Links from this</h2>
@@ -69,7 +70,7 @@ JUST COPY WHAT THIS SONG SILLY SHOWS - Simon Says / Sisqo Thong Song*/
                 <p><a href="/assets/images/moshfun_files/" target="_blank">All Gifs</a></p>
 
                 <h3>Code Before 5th Nov</h3>
-                <textarea disable rows="30"><!DOCTYPE html>
+                <textarea disabled rows="30"><!DOCTYPE html>
 <html><body style="background-color:yellow;">
 
 <p><img src="welcome.gif"></p>
@@ -109,7 +110,7 @@ And I like to collect spoons.
 
 </body></textarea>
 <h3>Code after 5th Nov</h3>
-                <textarea disable rows="30">
+                <textarea disabled rows="30">
 <!DOCTYPE html>
 <html>
 <!--Why are you wasting time reading this?!-->
@@ -154,6 +155,51 @@ And I like to collect spoons.
 <p>&nbsp;</p>
 </body>
 </html>
+</textarea>
+<h3>Code after 7th November</h3>
+<textarea disabled rows="30">
+<!DOCTYPE html>
+<html>
+<!--Why are you wasting time reading this?!-->
+<!--But don't you  think my web page writing thingy skills are great?!-->
+
+<body style="background-color:yellow;">
+
+<p><img src="welcome.gif" /></p>
+
+<p>My name is Mosh and I have been waiting for you!</p>
+
+<p>Hope you enjoy this page <img src="smile.gif" /></p>
+
+<p><img src="info.gif" /></p>
+
+<p><img src="funky.gif" /><img src="monkey.gif" /></p>
+
+<p>So what do you want to know about me?  Well, I'm a bit Silly</p>
+
+<p>I have a dog called Tothe <img src="dog.gif" /></p> 
+
+<p><img src="film.gif" />I love watching films at the local iMax!</p>
+
+<p>My star sign is Pisces (of course) <img src="astro.gif" /></p>
+
+And I like to collect spoons.
+
+<p>I prefer the old school way of doing things.</p>
+
+<p>If you do try to get in touch, <b>you must</b> include some way for me to contact you!</p>
+
+<p><img src="contact1.gif" /><img src="contact2.gif" /><img src="contact3.gif" /><img src="contact4.gif" /></p>
+
+<p><img src="contact.gif" /></p>
+
+<p>Down where the "precious trout" glides, in the song lady's state?</p>
+<p>first Understand this to claim the fish: mfdffdfo<8</p>
+
+<p>&nbsp;</p>
+</body>
+</html>
+
 </textarea>
             </div>
         </div>

@@ -7,7 +7,7 @@ use What3words\Geocoder\AutoSuggestOption;
 
 $w3w = new Geocoder(W3W_API_KEY);
 
-$result = $w3w->autosuggest($_GET['search'], [AutoSuggestOption::clipToCountry("GB")]);
+$result = $w3w->autosuggest($_GET['search']);
 
 echo json_encode($result['suggestions']);
 ?>
