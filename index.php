@@ -48,7 +48,7 @@
     <h1>So Long!</h1>
     <h2>And thanks for all the fish</h2>
 
-    <p>Just wanted to say thank you all for the fun hunt and congratulations to the winner.</p>
+    <p>Just wanted to say thank you all for the fun hunt and congratulations to the winner, met some awesome people on the way.</p>
     <p>I am leaving the site up for some time, but as is a test domain, it may pull it down at any point.</p>
     <p>The link to <a href="w3w.php">access the site is here</a> and the code for everything can still be found on the <a href="https://github.com/richtom80/max-fosh-treasure">GitHub</a></p>
     <p>Until next time, take care and happy hunting!</p>
