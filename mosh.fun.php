@@ -69,7 +69,7 @@ JUST COPY WHAT THIS SONG SILLY SHOWS - Simon Says / Sisqo Thong Song*/
                 <p><img src="/assets/images/screenshot_image.jpeg" style="width: 80%;" /><figcaption>Screenshot: 2022-07-23</figcaption></p>
                 <p><a href="/assets/images/moshfun_files/" target="_blank">All Gifs</a></p>
 
-                <h3>Code Before 5th Nov</h3>
+                <h3>Code Before <a href="mosh1.html">5th Nov</a></h3>
                 <textarea disabled rows="30"><!DOCTYPE html>
 <html><body style="background-color:yellow;">
 
@@ -109,7 +109,7 @@ And I like to collect spoons.
 
 
 </body></textarea>
-<h3>Code after 5th Nov</h3>
+<h3>Code after <a href="mosh2.html">5th Nov</a></h3>
                 <textarea disabled rows="30">
 <!DOCTYPE html>
 <html>
@@ -156,7 +156,7 @@ And I like to collect spoons.
 </body>
 </html>
 </textarea>
-<h3>Code after 7th November</h3>
+<h3>Code after <a href="mosh3.html">7th November</a></h3>
 <textarea disabled rows="30">
 <!DOCTYPE html>
 <html>
@@ -195,6 +195,45 @@ And I like to collect spoons.
 
 <p>Down where the "precious trout" glides, in the song lady's state?</p>
 <p>first Understand this to claim the fish: mfdffdfo<8</p>
+
+<p>&nbsp;</p>
+</body>
+</html>
+
+</textarea>
+<h3>Solve <a href="mosh4.html" target="_blank">8th Nov</a></h3>
+<textarea disabled="disabled" rows="30">
+<!DOCTYPE html>
+<html>
+<!--Why are you wasting time reading this?!-->
+<!--But don't you  think my web page writing thingy skills are great?!-->
+
+<body style="background-color:yellow;">
+
+<p><img src="welcome.gif" /></p>
+
+<p>My name is Mosh and I have been waiting for you!</p>
+
+<p>Hope you enjoy this page <img src="smile.gif" /></p>
+
+<p><img src="info.gif" /></p>
+
+<p><img src="funky.gif" /><img src="monkey.gif" /></p>
+
+<p>So what do you want to know about me?  Well, I'm a bit Silly</p>
+
+<p>I have a dog called Tothe <img src="dog.gif" /></p> 
+
+<p><img src="film.gif" />I love watching films at the local iMax!</p>
+
+<p>My star sign is Pisces (of course) <img src="astro.gif" /></p>
+
+And I like to collect spoons.
+
+<p><b>Important announcement!</b></p>
+<p>I've loved hearing from you, but I've stopped taking any more messages.</p>
+<p>Watch out for an announcement from MF, hope you had fun!!!</p>
+<p>Plenty more things to treasure out there :)</p>
 
 <p>&nbsp;</p>
 </body>

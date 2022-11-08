@@ -1,138 +1,72 @@
-<?php
-
-list($one,  $two, $three) = explode(".", $_GET['search']);
-include("includes/vars.php");
-?><!doctype html>
+<?php include("includes/vars.php"); ?><!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So long and thanks for all the fish!</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300&display=swap');
+    body{
+        background-color: #404258;
+        color: #efefef;
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.2em;
+    }
+    a, a:link, a:visited, a:hover{
+        color: #eee;
+    }
+    #so-long{
+        width: 20vw;
+        margin-top: 5vh;
+    }
+    h1, h2{
+        font-family: 'Pacifico', cursive;
+        font-size: 4em;
+        margin: 0em 0;
+        padding: 0;
+        color: #E94E1B;
+    }
+    h2{ color: #F28B17; }
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    @media only screen and (max-width: 600px) {
 
-    <title>W3W Search</title>
-  </head>
-  <body>
+        #so-long{
+            width: 80vw;
+            margin-top: 2vh;
+        }
+        h1, h2{
+            font-size: 2em;
+        }
+    }
+</style>
+<body>
 
-  <?php include("header.php"); ?>
+    <div><img src="assets/images/solong.svg" id="so-long" /></div>
+    <h1>So Long!</h1>
+    <h2>And thanks for all the fish</h2>
 
-  <div class="container">
-    <div class="row">
-      <main class="col-md-12">
-        <h1 class="mt-5">What3Words</h1>
-        <p class="lead">This site has been put together to search what3words.com for possible clues in the Max Fosh Treasure Hunt. It takes your search terms and jumbles them in all the possible orders, it is designed to be used with all three words
-        <p>There is also a <a href="wordsearch.php">word search tool</a>.</p>
-      </main>
-      <div class="col-md-4 col-sm-12">
-        <form name="w3wsearch">
-          <div class="form-group">
-            <label for="one">First Word</label>
-            <input type="text" class="form-control" name="one" id="one"
-              placeholder="Enter your first word, or leave blank" value="<?= $one; ?>" required />
-          </div>
-          <div class="form-group">
-            <label for="two">Second Word</label>
-            <input type="text" class="form-control" name="two" id="two"
-              placeholder="Enter your second word, or leave blank" value="<?= $two; ?>" required />
-          </div>
-          <div class="form-group">
-            <label for="three">Third Word</label>
-            <input type="text" class="form-control" name="three" id="three"
-              placeholder="Enter your thrid word, or leave blank" value="<?= $three; ?>" required />
-          </div>
-          <div class="form-group"><button type="button" id="load-results" class="btn btn-success my-2">Lookup
-              Suggestions</button></div>
-          <div id="linkHolder" class="alert alert-info my-2" title="Right click to copy link">Lookup to Load Link</div>
-        </form>
-      </div>
-      <div class="col-md-8 col-sm-12">
-        <div class="alert alert-success">
-          <h4 class="alert-heading">Results</h4>
-          <hr />
-          <div id="results">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <?php include("footer.php"); ?>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="/assets/js/bootstrap.min.js" ></script>
-    <script>
-    $(function(){
-    	$("#load-results").click(function(){
-        $("#results").empty();
-
-    		var searchterm = $("#one").val()+"."+$("#two").val()+"."+$("#three").val();
-
-        $("#linkHolder").html("<strong>Link to this search:</strong> <a href='https://www.richtom80.co.uk/?search="+searchterm+"' target='_blank'>https://www.richtom80.co.uk/?search="+searchterm+"</a>");
-        var searchterm2 = $("#one").val()+"."+$("#three").val()+"."+$("#two").val();
-        var searchterm3 = $("#three").val()+"."+$("#two").val()+"."+$("#one").val();
-        var searchterm4 = $("#three").val()+"."+$("#one").val()+"."+$("#two").val();
-        var searchterm5 = $("#two").val()+"."+$("#one").val()+"."+$("#three").val();
-        var searchterm6 = $("#two").val()+"."+$("#three").val()+"."+$("#one").val();
-
-        $("#results").append("<h5>"+searchterm+"</h5><ul id='st1'>");
-    		$.getJSON('w3w-ajax.php', { search: searchterm }).done(function(e){
-          $.each(e, function(i, item){
-            $("#st1").append("<li>Words: <strong><a href='https://w3w.co/"+item.words+"' target='_blank'>"+item.words+"</a></strong> | Near: <strong>"+item.nearestPlace+"</strong></li>");
-          });
-    		});
-        $("#results").append("</ul>");
-
-        $("#results").append("<h5>"+searchterm2+"</h5><ul id='st2'>");
-    		$.getJSON('w3w-ajax.php', { search: searchterm2 }).done(function(e){
-          $.each(e, function(i, item){
-            $("#st2").append("<li>Words: <strong><a href='https://w3w.co/"+item.words+"' target='_blank'>"+item.words+"</a></strong> | Near: <strong>"+item.nearestPlace+"</strong></li>");
-          });
-    		});
-        $("#results").append("</ul>");
-
-        $("#results").append("<h5>"+searchterm3+"</h5><ul id='st3'>");
-    		$.getJSON('w3w-ajax.php', { search: searchterm3 }).done(function(e){
-          $.each(e, function(i, item){
-            $("#st3").append("<li>Words: <strong><a href='https://w3w.co/"+item.words+"' target='_blank'>"+item.words+"</a></strong> | Near: <strong>"+item.nearestPlace+"</strong></li>");
-          });
-    		});
-        $("#results").append("</ul>");
-
-        $("#results").append("<h5>"+searchterm4+"</h5><ul id='st4'>");
-    		$.getJSON('w3w-ajax.php', { search: searchterm4 }).done(function(e){
-          $.each(e, function(i, item){
-            $("#st4").append("<li>Words: <strong><a href='https://w3w.co/"+item.words+"' target='_blank'>"+item.words+"</a></strong> | Near: <strong>"+item.nearestPlace+"</strong></li>");
-          });
-    		});
-        $("#results").append("</ul>");
-
-        $("#results").append("<h5>"+searchterm5+"</h5><ul id='st5'>");
-    		$.getJSON('w3w-ajax.php', { search: searchterm5 }).done(function(e){
-          $.each(e, function(i, item){
-            $("#st5").append("<li>Words: <strong><a href='https://w3w.co/"+item.words+"' target='_blank'>"+item.words+"</a></strong> | Near: <strong>"+item.nearestPlace+"</strong></li>");
-          });
-    		});
-        $("#results").append("</ul>");
-
-        $("#results").append("<h5>"+searchterm6+"</h5><ul id='st6'>");
-    		$.getJSON('w3w-ajax.php', { search: searchterm6 }).done(function(e){
-          $.each(e, function(i, item){
-            $("#st6").append("<li>Words: <strong><a href='https://w3w.co/"+item.words+"' target='_blank'>"+item.words+"</a></strong> | Near: <strong>"+item.nearestPlace+"</strong></li>");
-          });
-    		});
-        $("#results").append("</ul>");
+    <p>Just wanted to say thank you all for the fun hunt and congratulations to the winner.</p>
+    <p>I am leaving the site up for some time, but as is a test domain, it may pull it down at any point.</p>
+    <p>The link to <a href="w3w.php">access the site is here</a> and the code for everything can still be found on the <a href="https://github.com/richtom80/max-fosh-treasure">GitHub</a></p>
+    <p>Until next time, take care and happy hunting!</p>
+    <p>Richard Thompson (aka richtom80)</p>
+    
+</body>
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?= GOOGLE_ANALYTICS; ?>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-    	});
-    });
-    </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-  </body>
+    gtag('config', '<?= GOOGLE_ANALYTICS; ?>');
+  </script>
+
 </html>
