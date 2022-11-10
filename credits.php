@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>So long and thanks for all the fish!</title>
+    <title>Discord Credits</title>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300&display=swap');
@@ -48,12 +48,20 @@
     <h1>So Long!</h1>
     <h2>And thanks for all the fish</h2>
 
-    <p>Just wanted to say thank you all for the fun hunt and congratulations to the winner, met some awesome people on the way.</p>
-    <p>I am leaving the site up for some time, but as is a test domain, it may pull it down at any point.</p>
-    <p>The link to <a href="w3w.php">access the site is here</a> and the code for everything can still be found on the <a href="https://github.com/richtom80/max-fosh-treasure">GitHub</a></p>
-    <p>Until next time, take care and happy hunting!</p>
-    <p>Also a special mention in the <a href="credits.php">credits to certain members of the discord</a></p>
-    <p>Richard Thompson (aka richtom80)</p>
+    <h3>Credits to certain members on the discord, and thanks for their input and suggestions to make this possible</h3>
+
+    <p><strong>@Eternal</strong> - First suggestion for update to the tools, thanks and hope it helped.</p>
+    <p><strong>@MrDKOz</strong> - I think everyone is thankful for your Notion site</p>
+    <p><strong>@tyleroconnor123</strong> - All round top bloke and always helpful on the Discord.</p>
+    <p><strong>@JustTooPlus</strong> - Number of suggestions for tool improvements.</p>
+    <p><strong>@sneugelstroof</strong> - Great search skills and input on the mosh.fun site.</p>
+    <p><strong>@Bruce_1</strong> - Another great helper on the journey.</p>
+    <p><strong>@SirSourthwest</strong> - Kept us on track and awesome contributor.</p>
+    <p><strong>@Sherlock221b</strong> - Voice of reason, logical and top contributor.</p>
+    <p><strong>@HaggisWithKetchup</strong> - Taught me some things, epic knowledge!</p>
+    <p><strong>@absender</strong> - For revealing the mosh.fun site in the discord.</p>
+    <p><strong>@George</strong> - Top mod, as always 😉.</p>
+    <p><strong><a href="https://creationeer.co.uk">Shaun Whitehead</a></strong> - Sorry if you got any spam, thanks for the hunt, if you hand in it, think we all learnt a lot from you.</p>
     
 </body>
 
